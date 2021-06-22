@@ -1,0 +1,56 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+form{
+    margin: 50px auto;
+    width: 500px;    
+}
+
+.autocompletar{
+    position: relative;
+    display: inline-block;
+}
+strong{
+    color: #000;
+}
+
+#tipo-mascota{
+    background: #eee;
+    border: none;
+    border-radius: 30px;
+    font-size:1.7em;
+    padding: 10px 25px;
+    outline: none;
+    width: 500px;
+}
+
+.lista-autocompletar-items{
+    color: #ccc;
+    position: absolute;
+    border:1px solid #d4d4d4;
+    border-bottom: none;
+    z-index: 99;
+    top: 100%;
+    left: 20px;
+    right: 0;
+    width: 93%;
+}
+
+.lista-autocompletar-items div{
+    padding: 10px;
+    cursor: pointer;
+    background: #fff;
+    border-bottom: 1px solid #4d4d4d;
+}
+
+.lista-autocompletar-items div:hover{
+    background: dodgerblue;
+}
+
+.autocompletar-active{
+    background-color: dodgerblue !important;
+    color:#a1caff;
+}
+.autocompletar-active strong{
+    color:#fff;
+}
