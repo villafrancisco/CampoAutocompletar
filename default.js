@@ -1,9 +1,9 @@
 function autocompletar(){
-    const inputMascota=document.querySelector('#tipo-mascota');
+    const inputTexto=document.querySelector('#texto');
     let indexFocus=-1;
-    inputMascota.addEventListener('input',function(){
-        const tipoMascota=this.value;
-        if(!tipoMascota) return false;
+    inputTexto.addEventListener('input',function(){
+        const textoBuscar=this.value;
+        if(!textoBuscar) return false;
 
         cerrarLista();
 
@@ -21,11 +21,11 @@ function autocompletar(){
              // validar el array con el input
             if(listaElementos.length==0) return false;
             listaElementos.forEach(item => {
-                if(item.name.substr(0,tipoMascota.length)==tipoMascota){
+                if(item.name.substr(0,textoBuscar.length)==textoBuscar){
                     const elementoLista=document.createElement('div');
-                    elementoLista.innerHTML=`<strong>${item.name.substr(0,tipoMascota.length)}</strong>${item.name.substr(tipoMascota.length)}`;
+                    elementoLista.innerHTML=`<strong>${item.name.substr(0,textoBuscar.length)}</strong>${item.name.substr(textoBuscar.length)}`;
                     elementoLista.addEventListener('click',function(){
-                        inputMascota.value=this.innerText;
+                        inputTexto.value=this.innerText;
                         cerrarLista();
 
                     });
@@ -38,7 +38,7 @@ function autocompletar(){
        
     });
 
-    inputMascota.addEventListener('keydown',function(e){
+    inputTexto.addEventListener('keydown',function(e){
         const divList=document.querySelector('#' + this.id + '-lista-autocompletar');
         let items;
         if(divList){
